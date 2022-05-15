@@ -1,6 +1,6 @@
 function onClick(info, tab) {
     const linkUrl = info.linkUrl;
-    const pattern = /https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3000-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g;
+    const pattern = /http(s)?:\/\//;
 
     if (!linkUrl.match(pattern)) return; 
 
