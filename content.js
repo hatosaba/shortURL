@@ -27,5 +27,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
         alert("クリップボードにコピーしました")
     })
+    sendResponse({
+        value: request.url,
+    });
     return true;
 });
