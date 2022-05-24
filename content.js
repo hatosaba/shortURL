@@ -12,7 +12,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if(request.url.toLowerCase().startsWith('https://')) {
             navigator.clipboard.writeText(data.url);
         } else {
-            const inputID = 'chromeExtension-emeraldIsle-clipText';
+            const inputID = 'shortURL';
             if(document.querySelector(`#${inputID}`) === null) {
                 const $input = document.createElement('input');
                 $input.setAttribute('type', 'text');
@@ -25,8 +25,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             $inputDom.select();
             document.execCommand('copy');
         }
-        alert("クリップボードにコピーしました")
-    })
+         alert("クリップボードにコピーしました")
+    }) 
     sendResponse({
         value: request.url,
     });
